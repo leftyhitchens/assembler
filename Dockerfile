@@ -1,4 +1,4 @@
-FROM ringo/scientific:6.5
+FROM ubuntu
 RUN yum -y install git
 RUN yum -y install vim
 RUN yum -y install nano

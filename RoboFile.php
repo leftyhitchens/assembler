@@ -48,11 +48,14 @@ class RoboFile extends Tasks
             'clean'          => false,
             'force'          => false,
             'goodsPath'      => 'repos',
-            'customDataPath' => 'custom_data'
+            'customDataPath' => 'custom_data',
+            'productLinePath' => 'product_lines/'
         ]
     ) {
-        $manifest = $this->taskFormatProductLine($productLine)
-            ->forSalt()
+        $manifest = $this->taskFormatProductLine(
+            $productLine,
+            new \Indatus\Assembler\Formatter($opts['productLinePath'])
+        )->forSalt()
             ->run();
         $this->say("Created the manifest...");
         $stockerResult = $this->taskStockShelf(

@@ -28,7 +28,7 @@ class Formatter
     /**
      * @param string $productLinePath
      */
-    public function __construct($productLinePath = 'product_lines/')
+    public function __construct($productLinePath)
     {
         $this->productLinePath = realpath($productLinePath);
     }

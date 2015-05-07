@@ -24,9 +24,9 @@ class FormatProductLineTask implements TaskInterface
      * @param string                            $productLine
      * @param \Indatus\Assembler\Formatter|null $formatter
      */
-    public function __construct($productLine, Formatter $formatter = null)
+    public function __construct($productLine, Formatter $formatter)
     {
-        $this->formatter   = is_null($formatter) ? new Formatter : $formatter;
+        $this->formatter   = $formatter;
         $this->productLine = $productLine;
     }
 

@@ -6,7 +6,7 @@ use Indatus\Assembler\Tasks\FormatProductLineTask;
 
 trait FormatProductLine
 {
-    public function taskFormatProductLine($productLine, Formatter $formatter = null)
+    public function taskFormatProductLine($productLine, Formatter $formatter)
     {
         return new FormatProductLineTask($productLine, $formatter);
     }
